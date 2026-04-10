@@ -1,0 +1,17 @@
+NvDCF:
+  useHitCounter: 1
+  minHits: 3
+  maxTraceLength: 10
+  enablePastFrame: 1
+  enableBatchProcess: 1
+
+  featureImgSizeLevel: 3
+  SearchRegionPaddingScale: 1.75
+  useColorNames: 0
+  useHog: 0
+  useCNN: 1
+
+  cnnModelPath: "models/tracker/mars-small128.pb"
+  filterLr: 0.1
+  filterChannelScore: 0.9
+  minDetectorConfidence: 0.1

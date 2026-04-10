@@ -1,0 +1,18 @@
+[property]
+gpu-id=0
+net-scale-factor=0.0039215697906911373
+model-engine-file=models/peoplenet/resnet34_peoplenet_int8.etlt_b4_gpu0_int8.engine
+labelfile-path=models/peoplenet/labels.txt
+int8-calib-file=models/peoplenet/resnet34_peoplenet_int8.txt
+input-dims=3;544;960;0
+gie-unique-id=1
+operate-on-class-ids=0   ; 0=person only
+cluster-mode=4
+batch-size=4
+process-mode=1
+network-type=0
+
+[class-attrs-all]
+pre-cluster-threshold=0.4
+topk=20
+nms-iou-threshold=0.5

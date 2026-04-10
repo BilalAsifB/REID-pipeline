@@ -1,0 +1,13 @@
+[property]
+gpu-id=0
+net-scale-factor=0.003921568627
+offsets=123.675;116.28;103.53
+model-engine-file=models/reid/resnet50_market1501_aicity156_qdq.etlt_b16_gpu0_fp16.engine
+input-dims=3;256;128;0
+gie-unique-id=2
+operate-on-gie-id=1         ; runs on detections from gie-id=1 (PeopleNet)
+operate-on-class-ids=0
+process-mode=2              ; secondary inference (crops)
+batch-size=16
+network-type=100            ; feature vector output
+output-blob-names=output
