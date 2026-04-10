@@ -11,3 +11,5 @@ process-mode=2              ; secondary inference (crops)
 batch-size=16
 network-type=100            ; feature vector output
 output-blob-names=output
+output-tensor-meta=1        ; FIX: REQUIRED — attaches tensor output to NvDsUserMeta
+                            ;      Without this the probe never sees any feature vectors

@@ -1,12 +1,28 @@
 [project]
 name = "re-id"
 version = "0.1.0"
-description = "Add your description here"
+description = "Dual-camera RTSP person re-identification pipeline using NVIDIA DeepStream"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "numpy>=2.4.4",
-    "pyds>=0.2.0",
-    "pygobject>=3.56.2",
-    "scipy>=1.17.1",
+    "numpy>=1.24",
+    "scipy>=1.11",
+    # pygobject provides Python GStreamer (gi) bindings.
+    # Requires system packages: libcairo2-dev libgirepository-2.0-dev libglib2.0-dev
+    "pygobject>=3.50",
+    # NOTE: pyds (DeepStream Python bindings) is NOT installed via pip.
+    # It ships with the DeepStream SDK at:
+    #   /opt/nvidia/deepstream/deepstream/lib/pyds.so
+    # Add to your environment with:
+    #   export PYTHONPATH=/opt/nvidia/deepstream/deepstream/lib:$PYTHONPATH
+    # The pyds entry below is intentionally omitted to avoid pulling in
+    # the dummy PyPI stub (pyds==0.2.0) which is non-functional.
 ]
+
+[tool.uv]
+# System packages that must be installed before `uv sync`:
+#   sudo apt-get install -y libcairo2-dev libgirepository-2.0-dev \
+#       libglib2.0-dev pkg-config python3-dev \
+#       gstreamer1.0-tools gstreamer1.0-plugins-base \
+#       gstreamer1.0-plugins-good libgstreamer1.0-dev \
+#       libgstreamer-plugins-base1.0-dev
