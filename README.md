@@ -142,7 +142,7 @@ re-id/
 | Component | Detail |
 |---|---|
 | Probe placement | After `sgie` src pad — the only point where `NvDsInferTensorMeta` is populated |
-| `output-tensor-meta=1` | Required in `reid_infer.txt` or probe sees no features |
+| output-tensor-meta=1 | Required in `reid_infer.txt` or probe sees no features |
 | Camera ID source | `frame_meta.pad_index` from nvstreammux — not hardcoded |
 | Feature normalisation | L2-normalised at extraction; mean feature re-normalised before matching |
 | Matching throttle | Matcher runs at most every 500ms; returns cached assignments between runs |
